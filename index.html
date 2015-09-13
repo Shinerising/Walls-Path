@@ -1,0 +1,144 @@
+<html>
+
+<head>
+    <title>Walls and Path</title>
+    <script src="jquery-2.1.3.min.js"></script>
+    <script src="func.js"></script>
+    <style>
+        body {
+            margin: 0 auto;
+            position: relative;
+            border: none;
+        }
+        
+        #area {
+            width: 600px;
+            margin: 0 auto;
+        }
+        
+        #title {
+            width: 600px;
+            margin: 30px auto;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bolder;
+            font-family: Roboto;
+        }
+        
+        #main {
+            width: 600px;
+            height: 400px;
+        }
+        
+        #grids,
+        #texts,
+        #walls,
+        #paths {
+            position: absolute;
+            width: 480px;
+            height: 300px;
+            left: 80px;
+            top: 50px;
+        }
+        #housewall {
+            position: absolute;
+            width: 472px;
+            height: 292px;
+            left: 76px;
+            top: 106px;
+            border:8px solid #666;
+        }
+        #enter {
+            position: absolute;
+            background: #DDD;
+            width: 52px;
+            height: 8px;
+            left: 0px;
+            top: 292px;
+        }
+        #exit {
+            position: absolute;
+            background: #DDD;
+            width: 52px;
+            height: 8px;
+            left: 420px;
+            top: -8px;
+        }
+        
+        .grid {
+            position: absolute;
+            width: 52px;
+            height: 52px;
+            border: 4px solid #DDD;
+        }
+        
+        .grid_text {
+            position: absolute;
+            width: 56px;
+            height: 56px;
+            text-align: center;
+            font-size: 32px;
+            line-height: 56px;
+            font-family: Roboto;
+        }
+        .wall_h{
+            position: absolute;
+            width:68px;
+            height:8px;
+            cursor:pointer;
+        }
+        .wall_v{
+            position: absolute;
+            width:8px;
+            height:68px;
+            cursor:pointer;
+        }
+        .wall{
+            width:100%;
+            height:100%;
+            background: #666;
+        }
+        
+        #info{
+            width:400px;
+            margin:0 auto;
+        }
+        .path_h{
+            position: absolute;
+            width:38px;
+            height:8px;
+            background: #AAA;
+        }
+        .path_v{
+            position: absolute;
+            width:8px;
+            height:38px;
+            background: #AAA;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="area">
+        <div id="title">
+            Walls and Path
+        </div>
+        <div id="main">
+            <div id="grids"></div>
+            <div id="texts"></div>
+            <div id="housewall">
+            <div id="enter"></div>
+            <div id="exit"></div>
+            </div>
+            <div id="paths"></div>
+            <div id="walls"></div>
+        </div>
+        <div id="info">
+            <button id="check">Check</button>
+            <button id="clear">Clear</button>
+        </div>
+    </div>
+</body>
+<script src="run.js"></script>
+
+</html>
