@@ -66,7 +66,7 @@ $("#check").click(function () {
     $("#text_count").html(pathCount);
     var x = 6;
     if (x > pathCount) x = pathCount;
-    var w = x * 50 + 20;
+    var w = x * 50 + 40;
     $("#colors").css("height", "40px");
     $("#infotexts").css("height", "30px");
     $("#colors").css("width", w + "px");
