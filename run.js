@@ -62,11 +62,15 @@ $("#check").click(function () {
     clearPaths();
     checkGrid(0, 0, 0, 0, "");
     $("#check").title = "Check";
-    $("#text_step").html(pathStep);
-    $("#text_count").html(pathCount);
     var x = 6;
     if (x > pathCount) x = pathCount;
     var w = x * 50 + 40;
+    if (pathStep == 41) {
+        pathStep == 0;
+        w = 0;
+    }
+    $("#text_step").html(pathStep);
+    $("#text_count").html(pathCount);
     $("#colors").css("height", "40px");
     $("#infotexts").css("height", "30px");
     $("#colors").css("width", w + "px");
