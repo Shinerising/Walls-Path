@@ -1,23 +1,23 @@
 function createGrid(x, y, w) {
     var left = x * w;
-    var top = 300 - y * w;
+    var top = w * yMax - y * w;
     $("#grids").append("<div class='grid' style='left:" + left + "px;top:" + top + "px'></div>");
 }
 
 function createTextGrid(x, y, w, str) {
     var left = x * w;
-    var top = 300 - y * w;
+    var top = w * yMax - y * w;
     $("#texts").append("<div class='grid_text' style='left:" + left + "px;top:" + top + "px'>" + str + "</div>");
 }
 
 function createWall(x, y, d, w) {
     if (d == 0) { //horizontal
         var left = x * w - 4;
-        var top = 300 - y * w - 4;
+        var top = w * yMax - y * w - 4;
         $("#walls").append("<div class='wall_h' x=" + x + " y=" + y + " d=" + d + " style='left:" + left + "px;top:" + top + "px'></div>");
     } else { //vertical
         var left = 60 + x * w - 4;
-        var top = 300 - y * w - 4;
+        var top = w * yMax - y * w - 4;
         $("#walls").append("<div class='wall_v' x=" + x + " y=" + y + " d=" + d + " style='left:" + left + "px;top:" + top + "px'></div>");
     }
 }
@@ -34,19 +34,19 @@ function createPath(x, y, d, w, i) {
 
     if (d == 0) {
         var left = x * w + 26;
-        var top = 360 - y * w - 34;
+        var top = w * yMax + 60 - y * w - 34;
         $(node).append("<div class='path_v' x=" + x + " y=" + y + " d=" + d + " style='left:" + left + "px;top:" + top + "px;background:" + c + "'></div>");
     } else if (d == 1) {
         var left = x * w + 26;
-        var top = 360 - y * w - 34;
+        var top = w * yMax + 60 - y * w - 34;
         $(node).append("<div class='path_h' x=" + x + " y=" + y + " d=" + d + " style='left:" + left + "px;top:" + top + "px;background:" + c + "'></div>");
     } else if (d == 2) {
         var left = x * w + 26;
-        var top = 360 - y * w - 64;
+        var top = w * yMax + 60 - y * w - 64;
         $(node).append("<div class='path_v' x=" + x + " y=" + y + " d=" + d + " style='left:" + left + "px;top:" + top + "px;background:" + c + "'></div>");
     } else if (d == 3) {
         var left = x * w - 4;
-        var top = 360 - y * w - 34;
+        var top = w * yMax + 60 - y * w - 34;
         $(node).append("<div class='path_h' x=" + x + " y=" + y + " d=" + d + " style='left:" + left + "px;top:" + top + "px;background:" + c + "'></div>");
     }
 

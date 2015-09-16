@@ -1,24 +1,44 @@
-var xMax = 8;
-var yMax = 5;
+//  Change this parameters to change the grids' count of row and column
+//  DO NOT use big number (more than 15 in common) for good performance
+
+
+var xMax = 10;
+var yMax = 7;
 
 var pathStep = xMax * yMax + 1;
 var pathCount = 0;
 
 var gridWidth = 60;
 var wall_h = new Array(xMax);
-for (var i = 0; i < xMax; i++) {
+var i = 0;
+for (i = 0; i < xMax; i++) {
     wall_h[i] = new Array(yMax - 1);
 }
 var wall_v = new Array(xMax - 1);
-for (var i = 0; i < xMax - 1; i++) {
+for (i = 0; i < xMax - 1; i++) {
     wall_v[i] = new Array(yMax);
 }
 var grid = new Array(xMax);
-for (var i = 0; i < xMax; i++) {
+for (i = 0; i < xMax; i++) {
     grid[i] = new Array(yMax);
 }
 var paths = ["", "", "", "", "", ""];
 var pathshow = [0, 0, 0, 0, 0, 0];
+
+$("#main").css("width", xMax * gridWidth + 120 + "px");
+$("#main").css("height", yMax * gridWidth + 100 + "px");
+$("#grids").css("width", xMax * gridWidth + "px");
+$("#grids").css("height", yMax * gridWidth + "px");
+$("#texts").css("width", xMax * gridWidth + "px");
+$("#texts").css("height", yMax * gridWidth + "px");
+$("#walls").css("width", xMax * gridWidth + "px");
+$("#walls").css("height", yMax * gridWidth + "px");
+$("#paths").css("width", xMax * gridWidth + "px");
+$("#paths").css("height", yMax * gridWidth + "px");
+$("#housewall").css("width", xMax * gridWidth - 8 + "px");
+$("#housewall").css("height", yMax * gridWidth - 8 + "px");
+$("#enter").css("top", yMax * gridWidth - 8 + "px");
+$("#exit").css("left", xMax * gridWidth - 60 + "px");
 
 drawGrids(xMax, yMax, gridWidth);
 drawTexts(xMax, yMax, gridWidth);
@@ -65,7 +85,7 @@ $("#check").click(function () {
     var x = 6;
     if (x > pathCount) x = pathCount;
     var w = x * 50 + 40;
-    if (pathStep == 41) {
+    if (pathStep == xMax * yMax + 1) {
         pathStep == 0;
         w = 0;
     }
