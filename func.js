@@ -49,7 +49,6 @@ function createPath(x, y, d, w, i) {
         var top = w * yMax + 60 - y * w - 34;
         $(node).append("<div class='path_h' x=" + x + " y=" + y + " d=" + d + " style='left:" + left + "px;top:" + top + "px;background:" + c + "'></div>");
     }
-
 }
 
 function drawGrids(x, y, w) {
